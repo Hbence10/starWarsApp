@@ -14,7 +14,7 @@ export class ApiCallService {
   }
 
   pageCall(wantedType : string, wantedPage : number) : Observable<any>{
-    return this.http.get<any>("")
+    return this.http.get<any>(`https://www.swapi.tech/api/${wantedType}?page=${wantedPage}&limit=9`)
   }
 
 

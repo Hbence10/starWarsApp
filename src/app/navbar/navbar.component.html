@@ -11,7 +11,7 @@
                   <ul class="navbar-nav">
                     <!-- Karakterek -->
                     <li class="nav-item mx-1">
-                      <a class="nav-link text-md-center text-sm-center text-center" routerLink="/list">Characters</a>
+                      <a class="nav-link text-md-center text-sm-center text-center" (click)="listSwitch('people'); main.buttonQuantity = 9" routerLink="/list">Characters</a>
                     </li>
                     <!-- Filmek: -->
                     <li class="nav-item mx-1">
@@ -19,15 +19,15 @@
                     </li>
                     <!-- StarShipek -->
                     <li class="nav-item mx-1">
-                      <a class="nav-link text-md-center text-sm-center text-center" routerLink="/list">Spaceships</a>
+                      <a class="nav-link text-md-center text-sm-center text-center" (click)="listSwitch('starships'); main.buttonQuantity = 4" routerLink="/list" routerLink="/list">Starships</a>
                     </li>
                     <!-- Bolygok -->
                     <li class="nav-item mx-1">
-                      <a class="nav-link text-md-center text-sm-center text-center" routerLink="/list">Planets</a>
+                      <a class="nav-link text-md-center text-sm-center text-center" (click)="listSwitch('planets'); main.buttonQuantity = 6" routerLink="/list" routerLink="/list">Planets</a>
                     </li>
                     <!-- Fajok -->
                     <li class="nav-item mx-1">
-                      <a  class="nav-link text-md-center text-sm-center text-center" >Species</a>
+                      <a  class="nav-link text-md-center text-sm-center text-center" (click)="listSwitch('species'); main.buttonQuantity = 4" routerLink="/list" routerLink="/list">Species</a>
                     </li>
                   </ul>
 

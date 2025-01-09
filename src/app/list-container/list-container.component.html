@@ -1,1 +1,13 @@
-<p>list-container works!</p>
+<div class="container-xl">
+  <div class="row" *ngFor="let row of main.rows">
+    <div class="col-lg-4" *ngFor="let card of row">
+      <app-card [card]="card"></app-card>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <app-button-row></app-button-row>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,23 @@
-<p>card works!</p>
+<div class="container-fluid my-2">
+  <!-- Az adott dolog kepe: -->
+  <div class="row d-flex justify-content-center">
+      <div class="col-lg-12 defaultContainer d-flex flex-column justify-content-center align-items-center">
+          <img [src]="card.imgPath" [alt]="card.name" [title]="card.name" class="img-fluid ">
+      </div>
+  </div>
+
+  <!-- Az adott dolog neve: -->
+  <div class="row">
+      <div class="col-lg-12">
+          <h5 class="text-center my-2">{{card.name}}</h5>
+      </div>
+  </div>
+
+  <!-- A navigalo gomb amivel megtudjuk nezni az adott dolognak a leirasat -->
+  <div class="row">
+      <div class="col-lg-12 d-flex justify-content-center">
+          <button  class="btn btn-outline-dark">Check Details</button>
+      </div>
+  </div>
+
+</div>

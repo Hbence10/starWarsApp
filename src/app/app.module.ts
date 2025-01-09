@@ -10,6 +10,8 @@ import { CardComponent } from './card/card.component';
 import { ButtonRowComponent } from './button-row/button-row.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { InformationContainerComponent } from './information-container/information-container.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { InformationContainerComponent } from './information-container/informati
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideClientHydration(withEventReplay())
