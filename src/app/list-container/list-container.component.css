@@ -1,0 +1,8 @@
+.infoDiv{
+  height: 100vh;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.733);
+  position: fixed;
+}

@@ -9,8 +9,8 @@ export class ApiCallService {
 
   constructor(public http : HttpClient ) { }
 
-  singleCall(wantedType : string) : Observable<any>{
-    return this.http.get<any>("")
+  singleCall(link : string) : Observable<any>{
+    return this.http.get<any>(link)
   }
 
   pageCall(wantedType : string, wantedPage : number) : Observable<any>{

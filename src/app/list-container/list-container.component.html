@@ -2,6 +2,7 @@
   <div class="row" *ngFor="let row of main.rows">
     <div class="col-lg-4" *ngFor="let card of row">
       <app-card [card]="card"></app-card>
+      <app-information-container class="infoDiv" *ngIf="card.showDetails"></app-information-container>
     </div>
   </div>
 

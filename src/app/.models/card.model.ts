@@ -4,6 +4,7 @@ export class Card{
     public link : string,
     public modelType : string,
     public imgId : number,
-    public imgPath: string = `../assets/img/${modelType}/${imgId}.jpg`
+    public imgPath: string = `../assets/img/${modelType}/${imgId}.jpg`,
+    public showDetails : boolean = false
   ){}
 }
