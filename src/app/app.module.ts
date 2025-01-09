@@ -12,6 +12,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { InformationContainerComponent } from './information-container/information-container.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CardComponent,
     ButtonRowComponent,
     HomePageComponent,
-    InformationContainerComponent
+    InformationContainerComponent,
+    MovieListComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,

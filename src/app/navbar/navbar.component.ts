@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MainService } from '../main.service';
 import { ApiCallService } from '../api-call.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,16 +13,18 @@ import { ApiCallService } from '../api-call.service';
 export class NavbarComponent {
   muteMusic : boolean = false
 
-  constructor(public main : MainService, public apiCall : ApiCallService){}
-
-  moveToList(selectedList : string){
-    this.main.wantedListType = selectedList
-  }
+  constructor(public main : MainService, public apiCall : ApiCallService, public router : Router){}
 
   listSwitch(wantedType : string){
     this.main.cards = []
     this.main.rows = []
     this.main.wantedListType = wantedType;
-    this.apiCall.pageCall(wantedType, 1).subscribe(response => this.main.setCard(response, wantedType))
+
+    if (wantedType != "movie"){
+      this.apiCall.pageCall(wantedType, 1).subscribe(response => this.main.setCard(response, wantedType))
+      this.router.navigate(["list"])
+    } else{
+      this.router.navigate(["movieList"])
+    }
   }
 }

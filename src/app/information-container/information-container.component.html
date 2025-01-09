@@ -5,7 +5,13 @@
       <div class="container-fluid" id="detailsContainer">
         <div class="row">
           <div class="col-lg-12 d-flex align-items-center justify-content-end">
-            <button class="btn btn-outline-dark"></button>
+            <button class="btn btn-outline-dark" (click)="card.showDetails = false"><i class="fa-solid fa-x"></i></button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img [src]="main.selectedElement.imgPath" alt="" class="img-fluid">
           </div>
         </div>
       </div>

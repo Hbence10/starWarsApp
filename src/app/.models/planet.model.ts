@@ -10,6 +10,6 @@ export class Planet{
     public surface_water : number,
     public name : string,
     public id : number,
-    public imgPath : string = `../assets/img/people/${id}.jpg`
+    public imgPath : string = `../assets/img/planets/${id}.jpg`
   ){}
 }
