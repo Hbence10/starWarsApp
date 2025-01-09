@@ -1,59 +1,58 @@
-# StarWarsApp
+# StarWarsApp - Version 2
+![Login Page](./readme_img/logo.png)
+> All right resolved to Disney and SWAPI developer team\
+> Hello There! Do you love Star Wars? In that case please check my page.  
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+# Topics: 
+- [Appereance](#apperance)
+- [Helpfull Websites](#helpfull-websites)
+- [Contact](#contact)
 
-## Development server
+# Apperance:
+## Light Theme:
+#### Home Page:
+![Home Page](readme_img/light_theme/homePage.png)
+#### Character List:
+![Character List](readme_img/light_theme/characterList.png)
+#### Planet List: 
+![Planet](readme_img/light_theme/planetList.png)
+#### Space Ship List: 
+![Space Ship List](readme_img/light_theme/spaceShipList.png)
+#### Species List: 
+![Species List](readme_img/light_theme/speciesList.png)
+#### Details-Container: 
+![Details Container](readme_img/light_theme/detailsContainer.png)
+#### Movie-Details:
+![Movie Details](readme_img/light_theme/movieDetails.png)
 
-To start a local development server, run:
+## Dark Theme:
+#### Home Page:
+![Home Page](readme_img/dark_theme/homePage.png)
+#### Character List:
+![Character List](readme_img/dark_theme/characterList.png)
+#### Planet List: 
+![Planet](readme_img/dark_theme/planetList.png)
+#### Space Ship List: 
+![Space Ship List](readme_img/dark_theme/spaceShipList.png)
+#### Species List: 
+![Species List](readme_img/dark_theme/speciesList.png)
+#### Details-Container: 
+![Details Container](readme_img/dark_theme/detailsContainer.png)
+#### Movie-Details:
+![Movie Details](readme_img/dark_theme/movieDetails.png)
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+# Helpfull Websites:
+- [Angular Docs]("https://angular.dev/overview")
+- [Bootstrap Docs]("https://getbootstrap.com/docs/5.3/getting-started/introduction")
+- [SWAPI]("https://swapi.dev/")
+- [WOOKIEPEDIA]("https://starwars.fandom.com/wiki/Wookiee")
+- [Stackoverflow]("https://stackoverflow.com/")
+- [W3 schools]("https://www.w3schools.com/")
+- [GeeksForGeeks]("https://www.geeksforgeeks.org/")
+- [Font Awsome]("https://fontawesome.com/icons")
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Contact:
+- [Facebook]("https://www.facebook.com/halmai.bence.5?locale=hu_HU")
+- [Linked in]("https://www.linkedin.com/in/halmai-bence-5264062a4/")
+- Email: sulisdolgok8@gmail.com
