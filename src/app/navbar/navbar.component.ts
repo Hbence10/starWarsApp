@@ -22,7 +22,7 @@ export class NavbarComponent {
 
     if (wantedType != "movie"){
       this.apiCall.pageCall(wantedType, 1).subscribe(response => this.main.setCard(response, wantedType))
-      this.router.navigate(["list"])
+      this.router.navigate(["list", wantedType])
     } else{
       this.router.navigate(["movieList"])
     }

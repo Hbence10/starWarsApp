@@ -20,6 +20,7 @@ export class MainService {
   // Filmeknek az adatai:
   trailerLinks : string[] = ["vZ734NWnAHA", "JNwNXF9Y6kY", "7L8p7_SLzvU", "bD7bpG-zDJQ", "gYbW1F_c9eM", "5UnjrG_N8hU"] //A filmek trailer-enek az id-jai
   coverImgs : string[] = ["new_hope.jpg", "the_empire_strikes_back.jpg", "return_of_the_jedi.jpg", "the_phantom_menace.jpg", "attack_of_the_clones.jpg", "revenge_of_the_sith.jpg"] //A filmek posterei
+  movieList : Movie[] = []
   selectedMovie : Movie;
 
   constructor() {}
