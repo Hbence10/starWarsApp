@@ -1,0 +1,72 @@
+/*  */
+*{
+    transition: 0.2s;
+    color:#FFD369;
+}
+
+/*  */
+.footerLink{
+    color: #FFD369;
+}
+
+/*  */
+.nav-link{
+    transition: 0.3s;
+    color: #FFD369 !important;
+}
+
+.nav-link:hover{
+    transition: 0.3s;
+    background-color: black !important;
+    transform: scale(1.3, 1.3);
+}
+
+/*  */
+#mainBg{
+    background-color: #222831;
+}
+
+/*  */
+.bgColor{
+    background-color: #393E46 !important;
+}
+
+/*  */
+.btn, .btn-outline-dark{
+    border: 1px solid #FFD369 !important;
+    color: #FFD369 !important;
+}
+
+/*  */
+.btn:hover, .btn-outline-dark:hover{
+    background-color: black !important;
+    color: #FFD369 !important;
+}
+
+/*  */
+.active{
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/*  */
+.buttonContainer{
+    border-radius: 15px;
+    border: 2px solid #FFD369;
+}
+
+/*  */
+.selectedTheme{
+    color: yellow !important;
+}
+
+/*  */
+#detailsContainer, #secondDetailsContainer{
+    background-color: #222831;
+}
+
+/*  */
+.selectedButton{
+    border: #FFD369;
+    background-color: #393E46 !important;
+    color: white;
+}
