@@ -41,6 +41,8 @@ export class MainService {
   }
 
   setElement(response : any, card?:Card){
+    console.log(response)
+
     if(this.wantedListType == "planets"){
       this.selectedElement = new Planet(response.properties.diamater , response.properties.rotation_period, response.properties.orbital_period, response.properties.gravity, response.properties.population, response.properties.climate, response.properties.terrain, response.properties.surface_water, response.properties.name, response.uid)
     } else if (this.wantedListType == "species"){
@@ -48,10 +50,9 @@ export class MainService {
     } else if (this.wantedListType == "starships"){
       this.selectedElement = new Starships(response.properties.model , response.properties.starship_class , response.properties.manufacturer, response.properties.cost_in_credits, response.properties.length, response.properties.crew, response.properties.passengers, response.properties.max_atmosphering_speed, response.properties.hyperdrive_rating, response.properties.MGLT, response.properties.cargo_capacity, response.properties.consumables, response.properties.pilots, response.properties.name, response.uid)
     } else if (this.wantedListType == "people"){
-      this.selectedElement = new Character(response.properties.height ,response.properties.mass,response.properties.hair_color,response.properties.skin_color,response.properties.eye_color,response.properties.birth_year,response.properties.name,response.uid)
+      this.selectedElement = new Character(response.properties.height ,response.properties.mass,response.properties.hair_color,response.properties.skin_color,response.properties.eye_color,response.properties.birth_year,response.properties.name, response.properties.homeworld, response.uid)
     }
 
-    console.log(this.selectedElement)
     if(card != undefined){
       card.showDetails = true
     }
@@ -59,6 +60,5 @@ export class MainService {
 
   setMovie(response : any){
     this.selectedMovie = new Movie(response.properties.title, response.properties.opening_crawl, response.properties.director, response.properties.producer, response.properties.release_date, response.properties.characters, response.properties.starships, response.properties.vehicles, response.properties.species, this.trailerLinks[response.uid], this.coverImgs[response.uid])
-    console.log(response)
   }
 }

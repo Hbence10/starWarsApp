@@ -7,7 +7,8 @@ export class Character{
     public eye_color : string,
     public birth_year : string,
     public name : string,
+    public homeworld: string,
     public id : number,
-    public imgPath : string = `../assets/img/people/${id}.jpg`
+    public imgPath : string = `../assets/img/people/${id}.jpg`,
   ){}
 }

@@ -10,9 +10,37 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-6 d-flex justify-content-center align-items-center">
             <img [src]="main.selectedElement.imgPath" alt="" class="img-fluid">
           </div>
+
+
+          <div class="col-lg-6">
+            <h1 class="text-center">{{main.selectedElement.name}}</h1>
+
+            <!-- Az alap adatai az adott modelnek: -->
+            <h4>Base Details:</h4>
+            <div class="container-fluid">
+              <div class="row" *ngFor="let key of keys; let i = index">
+                <div class="col-lg-12">
+                  <p class="m-0" *ngIf="!listProperties.includes(key)"><span class="fw-bold">{{key}}: </span>{{values[i]}}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Karaktereknel a homeworld: -->
+            <h4 *ngIf="listProperties.includes('homeworld')">Homeworld:</h4>
+            <div *ngIf="listProperties.includes('homeworld')" class="container-fluid">
+              <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-fluid" src="..//../assets/img/planets/{{card.imgId}}.jpg" alt="">
+                    <p>{{planetCard.name}}</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
 
