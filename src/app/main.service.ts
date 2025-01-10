@@ -56,4 +56,9 @@ export class MainService {
       card.showDetails = true
     }
   }
+
+  setMovie(response : any){
+    this.selectedMovie = new Movie(response.properties.title, response.properties.opening_crawl, response.properties.director, response.properties.producer, response.properties.release_date, response.properties.characters, response.properties.starships, response.properties.vehicles, response.properties.species, this.trailerLinks[response.uid], this.coverImgs[response.uid])
+    console.log(response)
+  }
 }
