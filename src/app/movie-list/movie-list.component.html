@@ -1,20 +1,20 @@
 <div class="container xl">
-  <div class="row my-3" *ngFor="let row of rows; let i = index">
+  <div class="row my-5" *ngFor="let row of rows; let i = index">
     <div class="col-lg-4" *ngFor="let card of row; let j = index">
       <div class="container-fluid">
 
         <div class="row">
-          <div class="col-lg-12">
-            <img src="..//../assets/img/movie_posters/{{card.poster}}" alt="" class="img-fluid">
+          <div class="col-lg-12 d-flex justify-content-center align-items-center">
+            <img src="..//../assets/img/movie_posters/{{card.poster}}" [alt]="card.title" class="img-fluid" style="height: 400px;">
           </div>
         </div>
 
         <div class="row">
           <div class="col-lg-12 d-flex flex-column align-items-center justify-content-center">
-            <h1 class="text-center">{{card.title}}</h1>
+            <h1 class="text-center my-2">{{card.title}}</h1>
             <p class="m-0"><span class="fw-bold">IGN: </span>{{card.ign}}</p>
             <p class="m-0"><span class="fw-bold">IMDB: </span>{{card.imdb}}</p>
-            <button class="btn btn-outline-dark" (click)="chooseMovie(card)">Check Details</button>
+            <button class="btn btn-outline-dark mt-2" (click)="chooseMovie(card)">Check Details</button>
           </div>
         </div>
       </div>

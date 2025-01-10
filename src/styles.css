@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap'); /*Gombok, bekezdesek, listaelemek*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap'); /*Cimek, tulajdonsagok*/
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap'); /*nav-bar & footer*/
+
+
+/* Az osszes gomb az oldalon */
+button, li, p{
+    border: none;
+    background-color: transparent;
+    font-family: "Playpen Sans", cursive !important;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, span{
+    font-family: "Oswald", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.nav-link,.footerLink{
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+}
+

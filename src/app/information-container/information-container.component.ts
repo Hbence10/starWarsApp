@@ -14,10 +14,12 @@ import { response } from 'express';
 export class InformationContainerComponent implements OnInit {
   @Input() apiLink: string;
   @Input() card: Card;
-  keys: string[] = [];
-  values: string[] = [];
+  keys: any[] = [];
+  values: any[] = [];
   listProperties: string[] = ["pilots", "people", "name", "id", "imgPath", "homeworld"];
   planetCard : Card
+  pilotCards: Card[] = []
+  peopleCards: Card[] = []
 
   constructor(public apiCall: ApiCallService, public main: MainService) {}
 
@@ -31,18 +33,25 @@ export class InformationContainerComponent implements OnInit {
       this.values = Object.values(this.main.selectedElement)
 
       //Karaktereknek a sajat tulajdonsaga:
-      if(this.keys.includes("homeworld")){
-        this.apiCall.singleCall(this.values[this.keys.indexOf("homeworld")]).subscribe(response =>this.planetCard = new Card(response.result.properties.name, "", "planet", response.result.uid))
+      if (this.keys.includes("homeworld")){
+        this.apiCall.singleCall(this.values[this.keys.indexOf("homeworld")]).subscribe(response =>this.planetCard = new Card(response.result.properties.name, "planets", "planets", response.result.uid))
       }
 
+      //Starshipeknek a sajat tulajdonsaga:
+      if (this.keys.includes("pilots")){
+        const pilots : any[] = this.values[this.keys.indexOf("pilots")]
+        pilots.forEach(pilot => this.apiCall.singleCall(pilot)
+        .subscribe(response => this.pilotCards.push(new Card(response.result.properties.name, "", "people", response.result.uid))))
+      }
 
+      //Speciesnek a sajat tulajdonsaga:
+      if (this.keys.includes("people")){
+        const peoples : any[] = this.values[this.keys.indexOf("people")]
+        peoples.forEach(person => this.apiCall.singleCall(person).subscribe(response => this.peopleCards.push(new Card(response.result.properties.name, "", "people", response.result.uid))))
+      }
 
     } else {
 
     }
-  }
-
-  getPlanet(link : string){
-   return this.apiCall.singleCall(link)
   }
 }

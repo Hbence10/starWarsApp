@@ -4,11 +4,15 @@
 }
 
 #detailsContainer{
+  height: 650px;
+  width: 1420px;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  width: 1280px;
-  height: 720px;
+}
+
+.specieImg{
+  height: 540px;
 }

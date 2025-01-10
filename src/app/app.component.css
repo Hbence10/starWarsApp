@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+
+button{
+    font-family: "Playpen Sans", cursive !important;
+    font-optical-sizing: auto;
+    font-style: normal;
+}

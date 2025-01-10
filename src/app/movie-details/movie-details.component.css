@@ -1,0 +1,16 @@
+#coverImg{
+  height: 650px;
+}
+
+#characterListContainer{
+  max-height: 720px;
+  overflow-y: auto;
+}
+
+.detailsDiv{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+}

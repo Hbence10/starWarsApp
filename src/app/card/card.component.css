@@ -1,0 +1,5 @@
+/* Az alapertelmezett meret a kepekhez */
+.defaultContainer{
+  width: 250px;
+  height: 310px;
+}
