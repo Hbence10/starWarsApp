@@ -4,62 +4,58 @@
 
       <div class="container-fluid" id="detailsContainer">
         <div class="row">
-          <div class="col-lg-12 d-flex align-items-center justify-content-end">
+          <div class="col-lg-12 mt-3 d-flex align-items-center justify-content-end">
             <button class="btn btn-outline-dark" (click)="card.showDetails = false"><i class="fa-solid fa-x"></i></button>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 d-flex justify-content-center align-items-center">
+          <div class="col-lg-4 d-flex flex-column justify-content-center align-items-center">
+            <!-- md-tol a cim: -->
+            <h1 class="text-center d-lg-none d-md-block d-sm-block d-block my-3">{{main.selectedElement.name}}</h1>
             <img [class.specieImg]="main.wantedListType == 'species'" [src]="main.selectedElement.imgPath" alt="" class="img-fluid">
           </div>
 
-          <div class="col-lg-8">
-            <h1 class="text-center">{{main.selectedElement.name}}</h1>
+          <div class="col-lg-8" id="secondContainer">
+            <!-- lg-ben a cim: -->
+            <h1 class="text-center d-lg-block d-md-none d-sm-none d-none">{{main.selectedElement.name}}</h1>
 
             <!-- Az alap adatai az adott modelnek: -->
-            <h4>Base Details:</h4>
-            <div class="container-fluid">
+            <h4 class="text-lg-start text-center mt-4">Base Details:</h4>
+            <div class="container-fluid" >
               <div class="row" *ngFor="let key of keys; let i = index">
                 <div class="col-lg-12">
-                  <p class="m-0" *ngIf="!listProperties.includes(key)"><span class="fw-bold">{{key}}: </span>{{values[i]}}</p>
+                  <p class="m-0 text-lg-start text-center" *ngIf="!listProperties.includes(key)"><span class="fw-bold">{{key}}: </span>{{values[i]}}</p>
                 </div>
               </div>
             </div>
 
             <!-- Karaktereknel & Speciesnel a homeworld: -->
-            <h4 *ngIf="keys.includes('homeworld')">Homeworld:</h4>
+            <h4 *ngIf="keys.includes('homeworld')" class="mt-3 text-lg-start text-center">Homeworld:</h4>
             <div *ngIf="keys.includes('homeworld')" class="container-fluid">
               <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-fluid" [src]="planetCard.imgPath" alt="">
-                    <p>{{planetCard.name}}</p>
+                <div class="col-lg-12 d-lg-block d-flex justify-content-center align-items-center">
+                    <img class="img-fluid cardImage" [src]="planetCard.imgPath" [alt]="planetCard.name" [title]="planetCard.name">
                 </div>
               </div>
             </div>
 
             <!-- Starshipeknel a pilot: -->
-            <h4 *ngIf="keys.includes('pilots')">Pilot(s):</h4>
-            <div *ngIf="keys.includes('pilots')" class="container-fluid">
+            <h4 *ngIf="keys.includes('pilots') && pilotCards.length > 0" class="mt-3 text-lg-start text-center">Pilot(s):</h4>
+            <div *ngIf="keys.includes('pilots') && pilotCards.length > 0" class="container-fluid mb-5">
               <div class="row">
-                <div class="col-lg-12">
-                  <div class="d-flex flex-column" *ngFor="let pilot of pilotCards">
-                    <img [src]="pilot.imgPath" alt="" class="img-fluid">
-                    <p>{{pilot.name}}</p>
-                  </div>
+                <div class="col-lg-12 detailsRow d-lg-block d-flex flex-column justify-content-center align-items-center">
+                  <img *ngFor="let pilot of pilotCards" [src]="pilot.imgPath" [alt]="pilot.name" [title]="pilot.name" class="img-fluid cardImage mx-2 my-4">
                 </div>
               </div>
             </div>
 
             <!-- Speciesnel a people: -->
-            <h4 *ngIf="keys.includes('people')">People:</h4>
-            <div *ngIf="keys.includes('people')" class="container-fluid">
+            <h4 *ngIf="keys.includes('people')" class="mt-3 text-lg-start text-center">People:</h4>
+            <div *ngIf="keys.includes('people')" class="container-fluid mb-5">
               <div class="row">
-                <div class="col-lg-12">
-                  <div class="d-flex flex-column" *ngFor="let person of peopleCards">
-                    <img [src]="person.imgPath" alt="" class="img-fluid">
-                    <p>{{person.name}}</p>
-                  </div>
+                <div class="col-lg-12 detailsRow d-lg-block d-flex flex-column justify-content-center align-items-center">
+                  <img *ngFor="let person of peopleCards" [src]="person.imgPath" [alt]="person.name" [title]="person.name" class="img-fluid cardImage mx-2 my-4">
                 </div>
               </div>
             </div>

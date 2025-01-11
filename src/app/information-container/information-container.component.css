@@ -16,3 +16,44 @@
 .specieImg{
   height: 540px;
 }
+
+.cardImage{
+  height: 250px;
+}
+
+.detailsRow{
+  min-width: 700px;
+  overflow-x: auto !important;
+}
+
+#secondContainer{
+  height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 1420px) {
+  .shipImg{
+      height: 125px !important;
+  }
+
+  img {
+      height: 225px;
+  }
+
+  #detailsContainer {
+    height: 90% !important;
+    width: 90% !important;
+    overflow-y: auto;
+  }
+
+  .detailsRow{
+      min-width: 80%;
+      max-height: 80%;
+      overflow-y: auto;
+  }
+
+  .specieImg{
+    height: 250px;
+  }
+}

@@ -10,7 +10,7 @@ import { CardComponent } from './card/card.component';
 import { ButtonRowComponent } from './button-row/button-row.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { InformationContainerComponent } from './information-container/information-container.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch, withJsonpSupport } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
@@ -37,7 +37,11 @@ import {YouTubePlayer} from '@angular/youtube-player';
     YouTubePlayer
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(
+      withFetch(),
+      withJsonpSupport()
+    ),
   ],
   bootstrap: [AppComponent]
 })

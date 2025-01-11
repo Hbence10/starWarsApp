@@ -40,14 +40,15 @@ export class InformationContainerComponent implements OnInit {
       //Starshipeknek a sajat tulajdonsaga:
       if (this.keys.includes("pilots")){
         const pilots : any[] = this.values[this.keys.indexOf("pilots")]
-        pilots.forEach(pilot => this.apiCall.singleCall(pilot)
-        .subscribe(response => this.pilotCards.push(new Card(response.result.properties.name, "", "people", response.result.uid))))
+          pilots.forEach(pilot => this.apiCall.singleCall(pilot)
+          .subscribe(response => this.pilotCards.push(new Card(response.result.properties.name, "", "pilot", response.result.uid)))
+        )
       }
 
       //Speciesnek a sajat tulajdonsaga:
       if (this.keys.includes("people")){
         const peoples : any[] = this.values[this.keys.indexOf("people")]
-        peoples.forEach(person => this.apiCall.singleCall(person).subscribe(response => this.peopleCards.push(new Card(response.result.properties.name, "", "people", response.result.uid))))
+        peoples.forEach(person => this.apiCall.singleCall(person).subscribe(response => this.peopleCards.push(new Card(response.result.properties.name, "", "pilot", response.result.uid))))
       }
 
     } else {

@@ -15,6 +15,6 @@ export class Starships{
     public pilots : string [],
     public name : string,
     public id : number,
-    public imgPath : string = `../assets/img/starships/${id}.jpg`
+    public imgPath : string = `../assets/img/starships/${name}.jpg`
   ){}
 }
