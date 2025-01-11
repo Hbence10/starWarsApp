@@ -24,35 +24,34 @@ export class InformationContainerComponent implements OnInit {
   constructor(public apiCall: ApiCallService, public main: MainService) {}
 
   ngOnInit(): void {
-    if (this.main.wantedListType != 'movie') {
+    if (this.main.wantedListType != '') {
       this.apiCall
         .singleCall(this.apiLink)
-        .subscribe(response => this.main.setElement(response.result));
+        .subscribe(response => {
+          this.main.setElement(response.result)
+          this.keys = Object.keys(this.main.selectedElement)
+          this.values = Object.values(this.main.selectedElement)
 
-      this.keys = Object.keys(this.main.selectedElement)
-      this.values = Object.values(this.main.selectedElement)
+          //Karaktereknek a sajat tulajdonsaga:
+          if (this.keys.includes("homeworld")){
+            this.apiCall.singleCall(this.values[this.keys.indexOf("homeworld")]).subscribe(response =>this.planetCard = new Card(response.result.properties.name, "planets", "planets", response.result.uid))
+          }
 
-      //Karaktereknek a sajat tulajdonsaga:
-      if (this.keys.includes("homeworld")){
-        this.apiCall.singleCall(this.values[this.keys.indexOf("homeworld")]).subscribe(response =>this.planetCard = new Card(response.result.properties.name, "planets", "planets", response.result.uid))
-      }
+          //Starshipeknek a sajat tulajdonsaga:
+          if (this.keys.includes("pilots")){
+            const pilots : any[] = this.values[this.keys.indexOf("pilots")]
+              pilots.forEach(pilot => this.apiCall.singleCall(pilot)
+              .subscribe(response => this.pilotCards.push(new Card(response.result.properties.name, "", "pilot", response.result.uid)))
+            )
+          }
 
-      //Starshipeknek a sajat tulajdonsaga:
-      if (this.keys.includes("pilots")){
-        const pilots : any[] = this.values[this.keys.indexOf("pilots")]
-          pilots.forEach(pilot => this.apiCall.singleCall(pilot)
-          .subscribe(response => this.pilotCards.push(new Card(response.result.properties.name, "", "pilot", response.result.uid)))
-        )
-      }
+          //Speciesnek a sajat tulajdonsaga:
+          if (this.keys.includes("people")){
+            const peoples : any[] = this.values[this.keys.indexOf("people")]
+            peoples.forEach(person => this.apiCall.singleCall(person).subscribe(response => this.peopleCards.push(new Card(response.result.properties.name, "", "pilot", response.result.uid))))
+          }
 
-      //Speciesnek a sajat tulajdonsaga:
-      if (this.keys.includes("people")){
-        const peoples : any[] = this.values[this.keys.indexOf("people")]
-        peoples.forEach(person => this.apiCall.singleCall(person).subscribe(response => this.peopleCards.push(new Card(response.result.properties.name, "", "pilot", response.result.uid))))
-      }
-
-    } else {
-
+        });
     }
   }
 }

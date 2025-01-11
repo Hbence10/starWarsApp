@@ -1,9 +1,9 @@
 <div class="container-fluid">
 
   <!-- Az adott filmnek a cime md-ben, sm-ben, es simaban -->
-  <div class="row d-lg-none d-md-block d-sm-block d-block">
+  <div class="row d-lg-none d-block">
     <div class="col-lg-12">
-      <h1 class="text-center">{{main.selectedMovie.title}}</h1>
+      <h1 class="text-center my-3">{{main.selectedMovie.title}}</h1>
     </div>
   </div>
 
@@ -35,7 +35,7 @@
         <!-- Opening crowl: -->
         <div class="row my-2">
           <div class="col-lg-12">
-            <p class="m-0">{{main.selectedMovie.opening_crawl}}</p>
+            <p class="m-0 text-lg-start text-center">{{main.selectedMovie.opening_crawl}}</p>
           </div>
         </div>
 
@@ -48,15 +48,29 @@
 
         <!--  -->
         <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center align-items-center my-4">
-            <button class="btn btn-outline-dark mx-2">Characters</button>
-            <button class="btn btn-outline-dark mx-2">Starships</button>
-            <button class="btn btn-outline-dark mx-2">Vehicles</button>
-            <button class="btn btn-outline-dark mx-2">Species</button>
+          <div class="col-lg-12 d-flex flex-wrap justify-content-center align-items-center my-4">
+            <button class="btn btn-outline-dark mx-2 my-1" (click)="chooseList(main.selectedMovie.chararcters, 'people')">Characters</button>
+            <button class="btn btn-outline-dark mx-2 my-1" (click)="chooseList(main.selectedMovie.starships, 'starships')">Starships</button>
+            <button class="btn btn-outline-dark mx-2 my-1" (click)="chooseList(main.selectedMovie.species, 'species')">Species</button>
           </div>
         </div>
 
       </div>
     </div>
   </div>
+</div>
+
+<div class="container-fluid" id="listContainer" *ngIf="showListContainer">
+  <!-- <div class="row"> -->
+    <!-- <div class="col-lg-12"> -->
+      <!-- <div class="container-fluid" id="listContainer"> -->
+        <div class="row" *ngFor="let choosableElement of cardList">
+          <div class="col-lg-12">
+            <button class="btn btn-outline-dark w-100 my-2" (click)="choosableElement.showDetails = true">{{choosableElement.name}}</button>
+            <app-information-container class="listInfoDiv" [apiLink]="choosableElement.link" [card]="choosableElement" *ngIf="choosableElement.showDetails"></app-information-container>
+          </div>
+        </div>
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
 </div>

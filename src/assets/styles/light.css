@@ -56,8 +56,8 @@
 }
 
 /*  */
-#detailsContainer{
-    background-color: white;
+#detailsContainer, #listContainer, #secondDetailsContainer{
+  background-color: white;
 }
 
 /*  */
