@@ -14,6 +14,7 @@ export class ButtonRowComponent {
   constructor(public main : MainService, public apiCall : ApiCallService){}
 
   changePage(newPage : number){
+    this.main.activePage = newPage
     this.apiCall.pageCall(this.main.wantedListType, newPage).subscribe(response => this.main.setCard(response, this.main.wantedListType))
   }
 }

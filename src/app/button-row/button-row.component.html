@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12 d-flex justify-content-center align-items-center flex-wrap">
-      <button class="btn btn-outline-dark mx-2" *ngFor="let number of main.buttonNumbers" (click)="changePage(number)">{{number}}</button>
+      <button class="btn btn-outline-dark mx-2" *ngFor="let number of main.buttonNumbers" (click)="changePage(number)" [class.selectedButton]="number == main.activePage">{{number}}</button>
     </div>
   </div>
 </div>

@@ -70,3 +70,18 @@
     background-color: #393E46 !important;
     color: white;
 }
+
+.btn i, .btn-outline-dark i {
+  color: #FFD369 !important;
+}
+
+/* Scrollbarok: */
+*::-webkit-scrollbar{
+  background-color: #393E46 !important;
+  width: 5px;
+}
+
+*::-webkit-scrollbar-thumb{
+  background-color: #FFD369 !important;
+  border: 1px solid #FFD369 !important;
+}

@@ -14,36 +14,37 @@
 <body>
   <app-root></app-root>
 
+  <audio autoplay src="" id="selectedMusic" loop></audio>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   <script>
       const linkCss = document.getElementById("selectedStyle")
-      // const bgMusic = document.getElementById("selectedMusic")
+      const bgMusic = document.getElementById("selectedMusic")
 
       defaultTheme  = localStorage.getItem("theme") != null ? localStorage.getItem("theme") : "light"
 
-      // if(defaultTheme === "light"){
-        // linkCss.href = "./assets/styles/light.css"
-        // bgMusic.src = "./assets/musics/jediTheme.mp3"
-      // } else {
-        // linkCss.href = "./assets/styles/dark.css"
-        // bgMusic.src = "./assets/musics/darkSideTheme.mp3"
-      // }
+      if(defaultTheme === "light"){
+        linkCss.href = "./assets/styles/light.css"
+        bgMusic.src = "./assets/musics/jediTheme.mp3"
+      } else {
+        linkCss.href = "./assets/styles/dark.css"
+        bgMusic.src = "./assets/musics/darkSideTheme.mp3"
+      }
 
-      // function switchTheme(newTheme){
-      //   localStorage.setItem("theme", newTheme)
+      function switchTheme(newTheme){
+        localStorage.setItem("theme", newTheme)
 
-      //   if(newTheme === "light"){
-      //     linkCss.href = "./assets/styles/light.css"
-      //     bgMusic.src = "./assets/musics/jediTheme.mp3"
-      //   } else{
-      //     linkCss.href = "./assets/styles/dark.css"
-      //     bgMusic.src = "./assets/musics/darkSideTheme.mp3"
-      //   }
-      // }
+        if(newTheme === "light"){
+          linkCss.href = "./assets/styles/light.css"
+          bgMusic.src = "./assets/musics/jediTheme.mp3"
+        } else{
+          linkCss.href = "./assets/styles/dark.css"
+          bgMusic.src = "./assets/musics/darkSideTheme.mp3"
+        }
+      }
 
-      // function muteMusic(){
-      //   bgMusic.muted = !bgMusic.muted
-      // }
+      function muteMusic(){
+        bgMusic.muted = !bgMusic.muted
+      }
 
   </script>
 </body>

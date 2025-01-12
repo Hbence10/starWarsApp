@@ -10,23 +10,23 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav">
                     <!-- Karakterek -->
-                    <li class="nav-item mx-1">
+                    <li class="nav-item mx-1" [class.active]="main.wantedListType == 'people'">
                       <a class="nav-link text-md-center text-sm-center text-center" (click)="listSwitch('people'); main.buttonQuantity = 9">Characters</a>
                     </li>
                     <!-- Filmek: -->
-                    <li class="nav-item mx-1">
+                    <li class="nav-item mx-1" [class.active]="main.wantedListType == 'movie'">
                       <a class="nav-link text-md-center text-sm-center text-center" (click)="listSwitch('movie')">Movies</a>
                     </li>
                     <!-- StarShipek -->
-                    <li class="nav-item mx-1">
+                    <li class="nav-item mx-1" [class.active]="main.wantedListType == 'starships'">
                       <a class="nav-link text-md-center text-sm-center text-center" (click)="listSwitch('starships'); main.buttonQuantity = 4" routerLink="/list">Starships</a>
                     </li>
                     <!-- Bolygok -->
-                    <li class="nav-item mx-1">
+                    <li class="nav-item mx-1" [class.active]="main.wantedListType == 'planets'">
                       <a class="nav-link text-md-center text-sm-center text-center" (click)="listSwitch('planets'); main.buttonQuantity = 6" routerLink="/list">Planets</a>
                     </li>
                     <!-- Fajok -->
-                    <li class="nav-item mx-1">
+                    <li class="nav-item mx-1" [class.active]="main.wantedListType == 'species'">
                       <a  class="nav-link text-md-center text-sm-center text-center" (click)="listSwitch('species'); main.buttonQuantity = 4" routerLink="/list">Species</a>
                     </li>
                   </ul>

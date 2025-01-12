@@ -16,6 +16,7 @@ export class MainService {
   rows : Card[][] = []
   buttonQuantity : number;
   buttonNumbers : number[] = []
+  activePage : number = 1
 
   // Filmeknek az adatai:
   trailerLinks : string[] = ["vZ734NWnAHA", "JNwNXF9Y6kY", "7L8p7_SLzvU", "bD7bpG-zDJQ", "gYbW1F_c9eM", "5UnjrG_N8hU"] //A filmek trailer-enek az id-jai
@@ -60,6 +61,6 @@ export class MainService {
   }
 
   setMovie(response : any){
-    this.selectedMovie = new Movie(response.properties.title, response.properties.opening_crawl, response.properties.director, response.properties.producer, response.properties.release_date, response.properties.characters, response.properties.starships, response.properties.vehicles, response.properties.species, this.trailerLinks[response.uid], this.coverImgs[response.uid])
+    this.selectedMovie = new Movie(response.properties.title, response.properties.opening_crawl, response.properties.director, response.properties.producer, response.properties.release_date, response.properties.characters, response.properties.starships, response.properties.vehicles, response.properties.species, this.trailerLinks[response.uid-1], this.coverImgs[response.uid-1])
   }
 }

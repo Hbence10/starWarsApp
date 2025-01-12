@@ -16,6 +16,7 @@ export class NavbarComponent {
   constructor(public main : MainService, public apiCall : ApiCallService, public router : Router){}
 
   listSwitch(wantedType : string){
+    this.main.activePage = 1
     this.main.cards = []
     this.main.rows = []
     this.main.wantedListType = wantedType;
