@@ -1,5 +1,5 @@
 <div class="container xl">
-  <div class="row" *ngFor="let row of rows; let i = index">
+  <div class="row" *ngFor="let row of rows; let i = index" [@loadingAnimation]>
     <div class="col-lg-4 my-3" *ngFor="let card of row; let j = index">
       <div class="container-fluid">
 

@@ -4,12 +4,21 @@ import { MainService } from '../main.service';
 import { Router } from '@angular/router';
 import { Movie } from '../.models/movies.model';
 import { ApiCallService } from '../api-call.service';
+import { transition, trigger, useAnimation } from '@angular/animations';
+import { loadingAnimation } from '../.animation/loadingAnimation';
 
 @Component({
   selector: 'app-movie-list',
   standalone: false,
   templateUrl: './movie-list.component.html',
-  styleUrl: './movie-list.component.css'
+  styleUrl: './movie-list.component.css',
+  animations : [
+    trigger("loadingAnimation", [ //betolteskor ez az animacio folyik le
+      transition(":enter", [
+        useAnimation(loadingAnimation)
+      ])
+    ]),
+  ]
 })
 export class MovieListComponent implements OnInit{
   allMovieCard : MovieCard[] = []
