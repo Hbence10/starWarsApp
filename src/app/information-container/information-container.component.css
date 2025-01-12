@@ -4,15 +4,23 @@
 }
 
 #detailsContainer{
+  position: absolute;
   z-index: 9999;
   height: 650px;
   width: 1420px;
-  position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+  position: fixed !important;
 }
+
+.containerView{
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 
 .specieImg{
   height: 540px;
@@ -33,6 +41,8 @@
   overflow-x: hidden;
 }
 
+
+
 @media only screen and (max-width: 1420px) {
   .shipImg{
       height: 125px !important;
@@ -43,8 +53,8 @@
   }
 
   #detailsContainer {
-    height: 90% !important;
-    width: 90% !important;
+    height: 90%;
+    width: 90%;
     overflow-y: auto;
   }
 
@@ -56,5 +66,10 @@
 
   .specieImg{
     height: 250px;
+  }
+
+  .listView{
+    height: 100% !important;
+    width: 100% !important;
   }
 }

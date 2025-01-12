@@ -1,11 +1,14 @@
-<div class="container-flud infoDiv" >
+<div class="container-fluid" [class.containerView]="normalView">
   <div class="row">
     <div class="col-lg-12">
 
-      <div class="container-fluid" id="detailsContainer">
+      <div class="container-fluid" id="detailsContainer" [class.listView]="!normalView">
         <div class="row">
           <div class="col-lg-12 mt-3 d-flex align-items-center justify-content-end">
-            <button class="btn btn-outline-dark" (click)="card.showDetails = false"><i class="fa-solid fa-x"></i></button>
+            <button class="btn btn-outline-dark" (click)="card.showDetails = false; main.detailsOpen = false">
+              <i *ngIf="!main.detailsOpen" class="fa-solid fa-x"></i>
+              <i *ngIf="main.detailsOpen" class="fa-solid fa-arrow-left"></i>
+            </button>
           </div>
         </div>
 

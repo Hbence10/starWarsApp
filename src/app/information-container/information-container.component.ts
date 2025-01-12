@@ -14,6 +14,7 @@ import { response } from 'express';
 export class InformationContainerComponent implements OnInit {
   @Input() apiLink: string;
   @Input() card: Card;
+  @Input() normalView : boolean //Az adott dolog a listContainerbol vagy a filmekbol lett meghivva
   keys: any[] = [];
   values: any[] = [];
   listProperties: string[] = ["pilots", "people", "name", "id", "imgPath", "homeworld"];

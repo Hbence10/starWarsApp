@@ -15,38 +15,47 @@
   height: 100vh;
 }
 
-/* A listaknak: */
-.listInfoDiv{
-  height: 100vh;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  background-color: rgba(0, 0, 0, 0.733);
-}
-
-#listContainer{
-  height: 650px;
-  width: 1420px;
-  overflow-y: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-
 .shadow{
   background-color: rgba(0, 0, 0, 0.733);
 }
 
 @media only screen and (max-width: 1420px) {
-  .shipImg{
-      height: 125px !important;
-  }
-
   #listContainer {
     height: 90% !important;
     width: 90% !important;
     overflow-y: auto;
   }
+
+  .infoContainer{
+    position: absolute !important;
+  }
 }
+
+/* A listaknak: */
+.infoDiv{
+  height: 100vh;
+  width: 100vw;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#listContainer{
+  position: absolute;
+  z-index: 9999;
+  height: 650px;
+  width: 1420px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  /* position: fixed !important; */
+  /* overflow-y: auto; */
+}
+
+.selectContainer{
+  height: 580px;
+  overflow-y: auto !important;
+}
+

@@ -3,7 +3,7 @@
   <div class="row" *ngFor="let row of main.rows">
     <div class="col-lg-4 d-flex justify-content-center align-items-center my-3" *ngFor="let card of row">
       <app-card [card]="card"></app-card>
-      <app-information-container [card]="card" [apiLink]="card.link" class="infoDiv" *ngIf="card.showDetails"></app-information-container>
+      <app-information-container [card]="card" [apiLink]="card.link" [normalView]="true" class="infoDiv" *ngIf="card.showDetails"></app-information-container>
     </div>
   </div>
 

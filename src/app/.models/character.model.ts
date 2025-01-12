@@ -10,5 +10,9 @@ export class Character{
     public homeworld: string,
     public id : number,
     public imgPath : string = `../assets/img/people/${id}.jpg`,
-  ){}
+  ){
+    if(this.id > 17){
+      this.imgPath = `../assets/img/people/${this.id-1}.jpg`
+    }
+  }
 }

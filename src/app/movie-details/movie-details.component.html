@@ -42,7 +42,7 @@
         <!-- Az adott film elozetese: -->
         <div class="row my-2">
           <div class="col-lg-12 d-flex justify-content-center align-items-center my-4">
-            <youtube-player class="mx-2" [width]="videoWidth" [videoId]="main.selectedMovie.trailer_id" suggestedQuality="highres"></youtube-player>
+            <!-- <youtube-player class="mx-2" [width]="videoWidth" [videoId]="main.selectedMovie.trailer_id" suggestedQuality="highres"></youtube-player> -->
           </div>
         </div>
 
@@ -60,17 +60,29 @@
   </div>
 </div>
 
-<div class="container-fluid" id="listContainer" *ngIf="showListContainer">
-  <!-- <div class="row"> -->
-    <!-- <div class="col-lg-12"> -->
-      <!-- <div class="container-fluid" id="listContainer"> -->
-        <div class="row" *ngFor="let choosableElement of cardList">
-          <div class="col-lg-12">
-            <button class="btn btn-outline-dark w-100 my-2" (click)="choosableElement.showDetails = true">{{choosableElement.name}}</button>
-            <app-information-container class="listInfoDiv" [apiLink]="choosableElement.link" [card]="choosableElement" *ngIf="choosableElement.showDetails"></app-information-container>
+<div class="container-fluid infoDiv" *ngIf="showListContainer" style="background-color: rgba(0, 0, 0, 0.582);">
+  <div class="row">
+
+    <div class="col-lg-12" id="listContainer" [class.asd]="main.detailsOpen">
+      <div class="d-flex justify-content-end align-items-center">
+        <button class="btn btn-outline-dark my-2" (click)="showListContainer = false">
+          <i *ngIf="!main.detailsOpen" class="fa-solid fa-x"></i>
+        </button>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 selectContainer">
+              <button *ngFor="let details of cardList" class="w-100 my-2 btn btn-outline-dark" (click)="details.showDetails = true; main.detailsOpen = true">{{details.name}}</button>
+          </div>
+
+          <div class="infoContainer" *ngFor="let details of cardList">
+            <app-information-container style="position: fixed;" *ngIf="details.showDetails" [apiLink]="details.link" [card]="details" [normalView]="false"></app-information-container>
           </div>
         </div>
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </div> -->
+
+      </div>
+    </div>
+  </div>
+
 </div>

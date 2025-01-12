@@ -22,6 +22,7 @@ export class MainService {
   coverImgs : string[] = ["new_hope.jpg", "the_empire_strikes_back.jpg", "return_of_the_jedi.jpg", "the_phantom_menace.jpg", "attack_of_the_clones.jpg", "revenge_of_the_sith.jpg"] //A filmek posterei
   movieList : Movie[] = []
   selectedMovie : Movie;
+  detailsOpen : boolean = false
 
   constructor() {}
 
