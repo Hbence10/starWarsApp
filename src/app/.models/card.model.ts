@@ -12,7 +12,7 @@ export class Card{
       this.imgPath = `../assets/img/${modelType}/${name}.jpg`
     }
 
-    if(this.modelType == "pilot"){
+    if(this.modelType == "pilot" || this.modelType == "people"){
       this.imgPath = `../assets/img/people/${this.imgId}.jpg`
 
       if(this.imgId > 17){
